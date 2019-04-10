@@ -2,7 +2,9 @@ import React, { CSSProperties } from 'react';
 import SectionItem from './sectionItem';
 import { View } from './layout';
 
-interface Props {}
+interface Props {
+    view: View
+}
 
 /** React function component */
 export default function MainView(props: Props) {

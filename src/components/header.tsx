@@ -7,7 +7,7 @@ export default function Header() {
 
     return (
         <div style={header}>
-        <Link to="/test" style={headerItem}>
+        <Link to="/" style={headerItem}>
                 React Playground
             </Link>
         </div>
