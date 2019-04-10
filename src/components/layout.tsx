@@ -1,41 +1,21 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useLayoutEffect } from 'react';
 import Header from './header';
-import ViewContainer from './viewContainer';
+import { ViewContainer } from './viewContainer';
 import { fullScreen } from '../css';
 
 export type View = 'main' | 'forest' | 'sky' | 'desert'
 
-interface State {
-    view: View
-}
-
 /** React function component */
-export default class Layout extends React.Component<{}, State> {
+export default function Layout() {
 
-    state: State = {
-        view: 'main'
-    }
-
-    handleOnHeaderTextClick = () => {
-        this.setState({ view: 'main'}) 
-    }
-
-    handleOnSectionItemClicked = (view: View) => {
-        this.setState({ view: view })
-    }
-
-    render() {
         return (
             <div style={{ ...columnFlex, ...fullScreen, ...background }}>
-                <Header onHeaderTextClick = {this.handleOnHeaderTextClick}/>
-                <ViewContainer 
-                    view={this.state.view} 
-                    onSectionItemClicked = {this.handleOnSectionItemClicked}
-                />
+                <Header/>
+                <ViewContainer/>
             </div>
         );
     }
-}
+
 
 const columnFlex: CSSProperties = {
     display: 'flex',

@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom';
 
 /** React function component */
 
-interface Props {
-    onHeaderTextClick: () => void;
-}
-
-export default function Header(props: Props) {
+export default function Header() {
 
     return (
         <div style={header}>
-        <Link to="/test" style={headerItem} onClick = {props.onHeaderTextClick}>
+        <Link to="/test" style={headerItem}>
                 React Playground
             </Link>
         </div>
