@@ -1,21 +1,26 @@
-import React, { CSSProperties, useLayoutEffect } from 'react';
-import Header from './header';
-import { ViewContainer } from './viewContainer';
+import React, { Component, CSSProperties } from 'react';
+import Navbar from './navbar';
+import ViewContainer from './viewContainer/viewContainer';
 import { fullScreen } from '../css';
 
-export type View = 'main' | 'forest' | 'sky' | 'desert'
+interface Props {}
 
-/** React function component */
-export default function Layout() {
+interface State {
+    currentView: string
+}
 
+/** React class component */
+export default class Layout extends Component<Props, State> {
+
+    render() {
         return (
             <div style={{ ...columnFlex, ...fullScreen, ...background }}>
-                <Header/>
+                <Navbar/>
                 <ViewContainer/>
             </div>
         );
     }
-
+}
 
 const columnFlex: CSSProperties = {
     display: 'flex',

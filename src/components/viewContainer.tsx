@@ -4,6 +4,8 @@ import React, { CSSProperties, Suspense } from 'react';
 import { Route, Switch } from 'react-router';
 import Spinner from './spinner';
 import { lazy } from 'react';
+import { View } from './layout';
+
 
 const MainView = lazy(() => import('./mainView'));
 const DetailView = lazy(() => import('./detailView'));

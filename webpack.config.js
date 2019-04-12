@@ -5,7 +5,7 @@ module.exports = {
         filename: "main.bundle.js",
         path: __dirname + "/dist",
         publicPath: 'dist/',
-        chunkFilename: '[name].bundle.js'
+        chunkFilename: '[name].bundle.js',
     },
     optimization: {
         splitChunks: {

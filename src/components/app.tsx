@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Layout from './layout';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
+import Spinner from './spinner';
+import ErrorBoundary from './errorBoundary';
 
 /**
  * Application top level component. This is a good place for future
@@ -9,8 +11,12 @@ import { BrowserRouter } from 'react-router-dom'
 export default function App() {
 
     return (
-        <BrowserRouter>
-            <Layout/>
-        </BrowserRouter>
-    )
+        <Suspense fallback={<Spinner/>}>
+            <Router>
+                <ErrorBoundary>
+                    <Layout/>
+                </ErrorBoundary>
+            </Router>
+        </Suspense>
+    );
 }
